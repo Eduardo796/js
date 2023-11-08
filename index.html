@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula Vue</title>
+
+    <script src="https://unpkg.com/vue@3.2.20/dist/vue.global.prod.js">
+
+    </script>
+
+</head>
+<body>
+
+    <div id = "app">
+        <h1>{{nomeCompleto()}}</h1>
+        <h1>{{nomeCompleto()}}</h1>
+       <h1>{{cpf}}</h1>
+    </div>
+
+    <script>
+
+        const app = Vue.createApp({
+            data(){
+                return {
+                    nome : 'Eduardo',
+                    sobrenome : 'Anderson',
+                    cpf : 1234565,
+                };
+            },
+            methods: {
+                nomeCompleto(){
+                    return this.nome +' '+ this.sobrenome;
+                }
+            },
+        });
+
+        app.mount('#app');
+    </script>
+
+
+</body>
+</html>
