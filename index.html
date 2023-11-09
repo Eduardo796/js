@@ -13,9 +13,16 @@
 <body>
 
     <div id = "app">
-        <h1>{{nomeCompleto()}}</h1>
-        <h1>{{nomeCompleto()}}</h1>
-       <h1>{{cpf}}</h1>
+
+        <div v-for="(pessoa,index) in pessoas" :key="index">
+        
+    <div v-if="pessoa.ativo">
+
+    <p>Nome: {{pessoa.nome}}</p>
+    <p>CPF: {{pessoa.cpf}}</p>
+    <p>RG: {{pessoa.rg}}</p>
+<hr>
+    </div>
     </div>
 
     <script>
@@ -23,15 +30,28 @@
         const app = Vue.createApp({
             data(){
                 return {
-                    nome : 'Eduardo',
-                    sobrenome : 'Anderson',
-                    cpf : 1234565,
+                    pessoas: [
+                        {
+                    
+                        nome: 'Maria',
+                        cpf: 123445,
+                        rg: 342342,
+                        ativo: true,
+                        },
+                        {
+                        nome: 'José',
+                        cpf: 1244443445,
+                        rg: 342344444444442,
+                        ativo: true,
+                        },
+                        {
+                        nome: 'João',
+                        cpf: 999999,
+                        rg: 4545454542342,
+                        ativo: true,
+                        }
+                    ]
                 };
-            },
-            methods: {
-                nomeCompleto(){
-                    return this.nome +' '+ this.sobrenome;
-                }
             },
         });
 
